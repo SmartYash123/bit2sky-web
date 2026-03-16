@@ -1,0 +1,51 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 11 Mar 2026 17:13:42 at https://bit2sky.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://bit2sky.com/ -O1 "C:\bit2sky-copy\bit2sky" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+17:35:43	Error: 	"Not Found" (404) at link https://bit2sky.com/cf-fonts/v/open-sans/5.0.20/greek/wght/normal.html (from https://bit2sky.com/)
+17:35:43	Error: 	"Not Found" (404) at link https://bit2sky.com/cf-fonts/v/open-sans/5.0.20/hebrew/wght/normal.html (from https://bit2sky.com/)
+17:35:43	Error: 	"Not Found" (404) at link https://bit2sky.com/cf-fonts/v/open-sans/5.0.20/vietnamese/wght/normal.html (from https://bit2sky.com/)
+17:35:43	Error: 	"Not Found" (404) at link https://bit2sky.com/cf-fonts/v/open-sans/5.0.20/cyrillic/wght/normal.html (from https://bit2sky.com/)
+17:35:43	Error: 	"Not Found" (404) at link https://bit2sky.com/cf-fonts/v/open-sans/5.0.20/latin/wght/normal.html (from https://bit2sky.com/)
+17:35:43	Error: 	"Not Found" (404) at link https://bit2sky.com/cf-fonts/v/open-sans/5.0.20/cyrillic-ext/wght/normal.html (from https://bit2sky.com/)
+17:35:43	Error: 	"Not Found" (404) at link https://bit2sky.com/cf-fonts/v/open-sans/5.0.20/greek-ext/wght/normal.html (from https://bit2sky.com/)
+17:35:43	Error: 	"Not Found" (404) at link https://bit2sky.com/cf-fonts/v/open-sans/5.0.20/latin-ext/wght/normal.html (from https://bit2sky.com/)
+17:46:16	Error: 	"Not Found" (404) at link https://bit2sky.com/cdn-cgi/l/email-protection (from https://bit2sky.com/)
+18:01:30	Error: 	"Not Found" (404) at link https://bit2sky.com/assets/images/about/about-service-img-9.png (from https://bit2sky.com/legal-sector-technology-services)
+18:08:56	Warning: 	Retry after error -2 (Receive Time Out) at link https://bit2sky.com/storage/54/670e11bd5d9d4_1-(2).jpg (from https://bit2sky.com/blog/business)
+18:08:56	Warning: 	Retry after error -2 (Receive Time Out) at link https://bit2sky.com/blog-details/custom-business-software-development-the-key-to-scaling-your-business (from https://bit2sky.com/blog/business)
+18:08:56	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/53/670e10ac1071a_Top-Trends-in-Custom-Business-Software-Development.jpg (from https://bit2sky.com/blog/business)
+18:08:56	Warning: 	Retry after error -2 (Receive Time Out) at link https://bit2sky.com/Users/Bhavi/Downloads/brandbrainy___CAqYzusgPPx___.html (from https://bit2sky.com/assets/images/shape/shape-9.svg)
+18:09:04	Warning: 	Retry after error -2 (Receive Time Out) at link https://bit2sky.com/blog-details/how-fintech-startups-are-disrupting-traditional-financial-systems-with-it-solutions (from https://bit2sky.com/blog?page=2)
+18:09:07	Warning: 	Retry after error -2 (Receive Time Out) at link https://bit2sky.com/blog-details/advanced-technology-solutions-for-non-profits-fueling-mission-growth (from https://bit2sky.com/blog?page=2)
+18:09:10	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/46/66fa250ef2867_image-(3).png (from https://bit2sky.com/blog?page=2)
+18:09:11	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/the-digital-evolution-of-legal-sector-services-document-management-and-e-discovery (from https://bit2sky.com/blog?page=2)
+18:09:11	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/43/66ea7cc1a0c1f_image-(1).png (from https://bit2sky.com/blog?page=2)
+18:09:12	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/transforming-education-how-lms-systems-are-revolutionizing-learning-management (from https://bit2sky.com/blog?page=2)
+18:09:13	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/45/66f655cf67178_image-(2).png (from https://bit2sky.com/blog?page=2)
+18:09:15	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/achieving-seamless-integration-industrial-tech-innovations-in-distribution-systems (from https://bit2sky.com/blog?page=2)
+18:09:21	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/42/66d7e32d947c9_image.png (from https://bit2sky.com/blog?page=2)
+18:09:23	Warning: 	Retry after error -2 (Receive Time Out) at link https://bit2sky.com/blog-details/innovative-saas-development-techniques-and-case-studies (from https://bit2sky.com/blog?page=3)
+18:09:26	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/25/667524d72f96c_saas.png (from https://bit2sky.com/blog?page=3)
+18:09:41	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/cyber-security-threats-2024-key-risks-and-solutions (from https://bit2sky.com/blog?page=3)
+18:09:49	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/23/66751354731c4_cyber-security.png (from https://bit2sky.com/blog?page=3)
+18:09:50	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/comprehensive-healthcare-software-development-services-bit2sky (from https://bit2sky.com/blog?page=3)
+18:09:51	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/22/666972eaad10a_Comprehensive-Healthcare-Software-Development-Services-.png (from https://bit2sky.com/blog?page=3)
+18:10:01	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/3-benefits-of-the-onc-certification (from https://bit2sky.com/blog?page=3)
+18:10:06	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/15/66323d4412fc7_662b44cf09c8b_662b375119ab0_national-cancer-institute-NFvdKIhxYlU-unsplash-1-(1).jpg (from https://bit2sky.com/blog?page=3)
+18:10:18	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/design-thinking-in-electronic-health-record-ehr (from https://bit2sky.com/blog?page=4)
+18:11:19	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/12/66323c9eef800_662b44bbdf11d_662b36939b447_home-blog-img-3.jpg (from https://bit2sky.com/blog?page=4)
+18:11:20	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/how-to-get-the-most-out-of-microsoft-365 (from https://bit2sky.com/blog?page=4)
+18:11:21	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/13/66323cb454438_662b449ae1168_662b35247e659_home-blog-img-1.jpg (from https://bit2sky.com/blog?page=4)
+18:11:26	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/impact-of-corona-and-social-distancing-in-operations (from https://bit2sky.com/blog?page=4)
+18:11:28	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/17/66323d6a5604e_66307f083cdbf_662b3419b7f6b_Impact-of-Corona-and-Social-Distancing-in-Operations-1024x682-1-(1).jpg (from https://bit2sky.com/blog?page=4)
+18:11:32	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/blog-details/covid-19-impact-on-disability-health-services (from https://bit2sky.com/blog?page=4)
+18:12:10	Warning: 	Retry after error -4 (Connect Error) at link https://bit2sky.com/storage/18/66323d8a58868_662b4465a3a75_COVID-19-Impact-on-Disability-Health-Services-1024x813-1-(1).jpg (from https://bit2sky.com/blog?page=4)
+18:12:17	Error: 	"Not Found" (404) at link https://bit2sky.com/Users/Bhavi/Downloads/brandbrainy___CAqYzusgPPx___.html (from https://bit2sky.com/assets/images/shape/shape-9.svg)
+
+HTTrack Website Copier/3.49-2 mirror complete in 58 minutes 38 seconds : 413 links scanned, 372 files written (44070672 bytes overall) [36805564 bytes received at 10462 bytes/sec], 9302799 bytes transferred using HTTP compression in 165 files, ratio 17%, 2.5 requests per connection
+(11 errors, 29 warnings, 0 messages)

@@ -1,0 +1,113 @@
+@media(min-width: 991px){
+    .pad-tb {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+@media(max-width: 991px){
+    .app-card-style-2.app-card-style-2-full .app-card-img{
+        width: 254px;
+        min-width: 254px;
+    }
+}
+
+@media (max-width: 575px) {
+    .btn-main{
+        border-radius: 8px;
+        font-size: 12px;
+        padding: 0 22px;
+        line-height: 46px;
+    }
+    .app-card-style-2{
+        flex-direction: column;
+    }
+    .app-card-style-2 .app-card-text{
+        order: 1;
+    }
+    .app-card-style-2 .app-card-img{
+        width: 100% !important;
+    }
+    .pad-tb {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+/* ----------- END: common -----------------------*/
+@media(max-width: 1460px){
+    /* ----------- BEGIN: hero section -----------------------*/
+    .lead-hero .owl-nav{
+        position: static;
+        max-width: 100%;
+        justify-content: center;
+        translate: 0 0;
+    }
+    .lead-hero .owl-nav button{
+        margin: 10px;
+    }
+    /* ----------- END: hero section -----------------------*/
+}
+@media(max-width: 991px){
+     /* ----------- BEGIN: hero section -----------------------*/
+     .lead-hero{
+        min-height: auto;
+        height: auto;
+     }
+    .lead-hero .app-custom-container{
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-inline: 22px;
+    }
+    .lead-hero .app-custom-container .btn-box{
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .lead-hero .app-custom-container .img-container{
+        width: 100%;
+        max-width: 330px;
+        margin-bottom: 20px;
+    }
+     /* ----------- END: hero section -----------------------*/
+     /* ----------- BEGIN: hero section -----------------------*/
+     .section-why-choose .container{
+        flex-wrap: wrap;
+     }
+     .section-why-choose .container .award-col{
+        order: 1;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        min-width: 150px;
+        margin-inline: auto;
+     }
+     /* ----------- END: hero section -----------------------*/
+     /* ----------- BEGIN: section request quote -----------------------*/
+     .app-req-quote-form-col{
+        width: 100%;
+        min-width: 100%;
+     }
+     
+     /* ----------- END: section request quote -----------------------*/
+
+}
+@media(max-width: 768px){
+     /* ----------- BEGIN: hero section -----------------------*/
+     .lead-hero .btn-box{
+         gap: 0.5rem !important;
+     }
+     .lead-hero .banner-title-2 {
+         font-size: 44px;
+         line-height: 54px;
+     }
+     /* ----------- END: hero section -----------------------*/
+     /* ----------- BEGIN: main nav -----------------------*/
+     .main-header{
+        height: 56px;
+     }
+     /* ----------- END: main nav -----------------------*/
+
+}
