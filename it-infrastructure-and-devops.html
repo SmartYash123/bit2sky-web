@@ -32,6 +32,7 @@
     <!--plugin-css-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/plugin.min.css" rel="stylesheet">
+    <link href="assets/css/brevo-forms.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     
     
@@ -541,14 +542,40 @@
         </div>
         <div class="form-block sidebarform">
             <h4>Request A Quote</h4>
-            <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
-            <script type="text/javascript">
-                hbspt.forms.create({
-                    region: "na1",
-                    portalId: "8399082",
-                    formId: "88a03aa7-0834-4dcb-9339-73ff748b8acd"
-                });
-            </script>
+            <form class="brevo-quote-form" novalidate>
+                <div class="fieldsets row">
+                    <div class="col-sm-12 mb-3">
+                        <label>First name</label>
+                        <input type="text" name="firstName" class="form-control" required>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <label>Last name</label>
+                        <input type="text" name="lastName" class="form-control">
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <label>Email<span style="color:red">*</span></label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <label>Phone</label>
+                        <input type="tel" name="phone" class="form-control">
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <label>Company</label>
+                        <input type="text" name="company" class="form-control">
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <label>Message</label>
+                        <textarea name="message" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn-submit">Submit</button>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-status"></div>
+                    </div>
+                </div>
+            </form>
             
             
         </div>
@@ -873,7 +900,8 @@
     }
 </style>
 <script src="cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="63e50287d34152454c2e0a56-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"c2e96c2771dc4c6cbb6687a5417d80ae","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9daa4fd8eec81221',t:'MTc3MzIyOTUxNQ=='};var a=document.createElement('script');a.src='cdn-cgi/challenge-platform/h/g/scripts/jsd/ea2d291c0fdc/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9daa4fd8eec81221',t:'MTc3MzIyOTUxNQ=='};var a=document.createElement('script');a.src='cdn-cgi/challenge-platform/h/g/scripts/jsd/ea2d291c0fdc/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script src="assets/js/brevo-forms.js" type="text/javascript"></script>
+</body>
 
 <!-- Mirrored from bit2sky.com/it-infrastructure-and-devops by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Mar 2026 12:06:23 GMT -->
 </html>

@@ -1,0 +1,89 @@
+form.brevo-quote-form {
+  margin-top: 20px !important;
+}
+
+form.brevo-quote-form label,
+form.brevo-newsletter-form label {
+  display: block !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  margin-bottom: 4px !important;
+  text-transform: none !important;
+}
+
+form.brevo-quote-form .form-control,
+form.brevo-newsletter-form .form-control {
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  padding: 10px 12px !important;
+  font-size: 14px !important;
+  transition: border-color 0.3s !important;
+  width: 100% !important;
+  background: #fff !important;
+  height: auto !important;
+}
+
+form.brevo-quote-form .form-control:focus,
+form.brevo-newsletter-form .form-control:focus {
+  border-color: #4da6c9 !important;
+  box-shadow: 0 0 0 0.2rem rgba(77, 166, 201, 0.25) !important;
+  outline: none !important;
+}
+
+form.brevo-quote-form textarea.form-control {
+  resize: vertical;
+}
+
+form.brevo-quote-form .btn-submit,
+form.brevo-newsletter-form .btn-submit {
+  background: #ff5722 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 10px 30px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background 0.3s !important;
+  display: inline-block !important;
+  width: auto !important;
+}
+
+form.brevo-quote-form .btn-submit:hover,
+form.brevo-newsletter-form .btn-submit:hover {
+  background: #e64a19 !important;
+}
+
+form.brevo-quote-form .btn-submit:disabled,
+form.brevo-newsletter-form .btn-submit:disabled {
+  opacity: 0.7 !important;
+  cursor: not-allowed !important;
+}
+
+.form-status {
+  font-size: 14px;
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+.form-status.text-success {
+  color: #28a745 !important;
+}
+
+.form-status.text-danger {
+  color: #dc3545 !important;
+}
+
+.sidebarform form.brevo-quote-form label {
+  font-size: 12px !important;
+}
+
+.sidebarform form.brevo-quote-form .form-control {
+  font-size: 13px !important;
+  padding: 8px 10px !important;
+}
+
+form.brevo-newsletter-form .form-control {
+  height: 44px !important;
+}
