@@ -59,7 +59,8 @@ module.exports = async function handler(req, res) {
 
     // 3. Send notification to team
     const teamNotify = new SibApiV3Sdk.SendSmtpEmail();
-    teamNotify.to = [{ email: process.env.BREVO_TEAM_EMAIL }];
+    teamNotify.to = [{ email: 'info@bit2sky.com', name: 'Bit2Sky Team' }];
+    teamNotify.replyTo = { email: email, name: firstName + (lastName ? ' ' + lastName : '') };
     teamNotify.templateId = parseInt(process.env.BREVO_TEAM_NOTIFY_TEMPLATE_ID);
     teamNotify.params = {
       FIRSTNAME: firstName,
