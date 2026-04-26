@@ -2,6 +2,7 @@
   "name": "bit2sky-web",
   "private": true,
   "dependencies": {
-    "@getbrevo/brevo": "^2.0.0"
+    "@getbrevo/brevo": "^2.0.0",
+    "firebase-admin": "^12.0.0"
   }
 }
