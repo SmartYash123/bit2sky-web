@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Consent - HealHub.Life Patient Registration</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #f5f7fa; }
+        h1 { color: #122F50; border-bottom: 3px solid #2390B3; padding-bottom: 10px; }
+        h2 { color: #2390B3; margin-top: 30px; }
+        .form-container { background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin: 20px 0; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; color: #122F50; }
+        .form-group label.required::after { content: " *"; color: #F8285A; }
+        .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"] {
+            width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 15px; box-sizing: border-box;
+        }
+        .consent-box { background: #E6F4F9; border: 2px solid #2390B3; border-radius: 8px; padding: 20px; margin: 25px 0; }
+        .consent-box label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 14px; line-height: 1.6; }
+        .consent-box input[type="checkbox"] { margin-top: 4px; width: 20px; height: 20px; accent-color: #2390B3; flex-shrink: 0; }
+        .btn-register { background: #2390B3; color: #fff; border: none; padding: 14px 40px; font-size: 16px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+        .btn-register:hover { background: #1B7A9A; }
+        .btn-register:disabled { background: #94a3b8; cursor: not-allowed; }
+        .sms-info { background: #f8f9fa; border-left: 4px solid #2390B3; padding: 15px 20px; margin: 20px 0; font-size: 14px; }
+        .note { color: #666; font-size: 13px; margin-top: 5px; }
+        .company-info { background: #E6F4F9; padding: 15px 20px; border-radius: 8px; margin: 20px 0; }
+        .badge { display: inline-block; background: #17C653; color: #fff; font-size: 12px; padding: 3px 10px; border-radius: 12px; font-weight: 600; }
+        a { color: #2390B3; }
+        .form-message { padding: 12px 16px; border-radius: 8px; margin-top: 15px; font-weight: 500; display: none; }
+        .form-message.success { display: block; background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+        .form-message.error { display: block; background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+    </style>
+</head>
+<body>
+    <h1>HealHub.Life - Patient Registration</h1>
+    <p>Register for your patient portal account to manage appointments, access telehealth visits, and receive care notifications.</p>
+
+    <div class="form-container">
+        <h2 style="margin-top: 0;">Create Your Account</h2>
+
+        <form id="patientRegForm">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="form-group">
+                    <label class="required">First Name</label>
+                    <input type="text" id="firstName" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                    <label class="required">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Doe" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Email Address</label>
+                <input type="email" id="email" placeholder="john.doe@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+1 (555) 123-4567" required>
+                <p class="note">We'll use this number to send appointment reminders and verification codes.</p>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Date of Birth</label>
+                <input type="text" id="dateOfBirth" placeholder="MM/DD/YYYY" required>
+            </div>
+
+            <div class="consent-box">
+                <h3 style="margin-top: 0; color: #122F50;">SMS Notification Consent</h3>
+                <label>
+                    <input type="checkbox" id="smsOptIn" checked>
+                    <span>I agree to receive appointment reminders, scheduling confirmations, telehealth session notifications, verification codes, and health notifications via SMS text messages from HealHub.Life to the phone number provided above. <strong>Message and data rates may apply.</strong> Message frequency varies (typically 1-10 messages/month). Reply <strong>STOP</strong> to unsubscribe at any time. Reply <strong>HELP</strong> for assistance. View our <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-and-conditions.html">Terms and Conditions</a>.</span>
+                </label>
+            </div>
+
+            <div class="consent-box" style="background: #f8f9fa; border-color: #d1d5db;">
+                <label>
+                    <input type="checkbox" id="termsAgreed" checked>
+                    <span>I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a> of HealHub.Life. I understand that my health information will be handled in accordance with HIPAA regulations.</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-register" id="submitBtn">Create Account</button>
+            <div id="formMessage" class="form-message"></div>
+        </form>
+    </div>
+
+    <div class="sms-info">
+        <h3 style="margin-top: 0;">About HealHub SMS Notifications</h3>
+        <p><strong>What messages will I receive?</strong></p>
+        <ul>
+            <li>Appointment reminders and confirmations</li>
+            <li>Telehealth session links and notifications</li>
+            <li>Account verification codes</li>
+            <li>Prescription and care coordination updates</li>
+        </ul>
+        <p><strong>Sample Messages:</strong></p>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="background: #e8e8e8; padding: 10px 15px; border-radius: 12px; margin: 8px 0; max-width: 500px;">HealHub: Your appointment with Dr. Smith is confirmed for March 10 at 2:00 PM. Reply STOP to opt out.</li>
+            <li style="background: #e8e8e8; padding: 10px 15px; border-radius: 12px; margin: 8px 0; max-width: 500px;">HealHub: Reminder - You have a telehealth visit tomorrow at 10:00 AM. Reply STOP to unsubscribe.</li>
+            <li style="background: #e8e8e8; padding: 10px 15px; border-radius: 12px; margin: 8px 0; max-width: 500px;">HealHub: Your verification code is 123456. This code expires in 10 minutes.</li>
+        </ul>
+        <p><strong>Opt-Out:</strong> Reply STOP to any message to unsubscribe. You can also manage SMS preferences in your HealHub.Life account settings.</p>
+        <p><strong>Help:</strong> Reply HELP or contact <a href="mailto:support@healhub.life">support@healhub.life</a></p>
+        <p><strong>Supported Carriers:</strong> AT&T, T-Mobile, Verizon, and most major US carriers.</p>
+    </div>
+
+    <div class="company-info">
+        <strong>Bit2Sky Inc.</strong> | 43184 Ashley Heights Cir, Ashburn, VA 20148<br>
+        <a href="mailto:support@healhub.life">support@healhub.life</a> | <a href="https://healhub.life">healhub.life</a>
+    </div>
+
+    <script>
+        document.getElementById('patientRegForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+
+            // Prevent double submit
+            if (submitBtn.disabled) return;
+
+            // Validate terms checkbox
+            if (!document.getElementById('termsAgreed').checked) {
+                formMessage.className = 'form-message error';
+                formMessage.textContent = 'Please agree to the Terms and Conditions to continue.';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Creating Account...';
+            formMessage.className = 'form-message';
+            formMessage.style.display = 'none';
+
+            try {
+                const response = await fetch('https://www.bit2sky.com/api/patient-registration', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        firstName: document.getElementById('firstName').value.trim(),
+                        lastName: document.getElementById('lastName').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        dateOfBirth: document.getElementById('dateOfBirth').value.trim(),
+                        smsOptIn: document.getElementById('smsOptIn').checked
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = 'Account created successfully! You will receive a confirmation email shortly.';
+                    e.target.reset();
+                } else {
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = data.error || 'Something went wrong. Please try again.';
+                }
+            } catch (error) {
+                formMessage.className = 'form-message error';
+                formMessage.textContent = 'Network error. Please check your connection and try again.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Create Account';
+            }
+        });
+    </script>
+</body>
+</html>

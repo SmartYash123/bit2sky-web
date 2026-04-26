@@ -27,7 +27,7 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { firstName, lastName, email, phone, smsOptIn } = req.body;
+  const { firstName, lastName, email, phone, dateOfBirth, smsOptIn } = req.body;
 
   if (!firstName || !email) {
     return res.status(400).json({ error: 'First name and email are required.' });
@@ -39,6 +39,7 @@ module.exports = async function handler(req, res) {
       lastName: lastName || '',
       email: email || '',
       phone: phone || '',
+      dateOfBirth: dateOfBirth || '',
       smsOptIn: smsOptIn || false,
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
       source: 'bit2sky-website'
