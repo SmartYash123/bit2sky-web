@@ -1,7 +1,67 @@
 {
   "buildCommand": "",
   "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/blog-details/3-benefits-of-the-onc-certification",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/achieving-seamless-integration-industrial-tech-innovations-in-distribution-systems",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/advanced-technology-solutions-for-non-profits-fueling-mission-growth",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/comprehensive-healthcare-software-development-services-bit2sky",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/covid-19-impact-on-disability-health-services",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/custom-business-software-development-the-key-to-scaling-your-business",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/cyber-security-threats-2024-key-risks-and-solutions",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/design-thinking-in-electronic-health-record-ehr",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/how-fintech-startups-are-disrupting-traditional-financial-systems-with-it-solutions",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/how-to-get-the-most-out-of-microsoft-365",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/impact-of-corona-and-social-distancing-in-operations",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/innovative-saas-development-techniques-and-case-studies",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/the-digital-evolution-of-legal-sector-services-document-management-and-e-discovery",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    },
+    {
+      "source": "/blog-details/transforming-education-how-lms-systems-are-revolutionizing-learning-management",
+      "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }]
+    }
   ]
 }
