@@ -672,3 +672,170 @@ background-image: linear-gradient(90deg, #673AB7 0%, #E91E63 36%, #E91E63 65%, #
     }
 }
 
+
+/* ---------- Hero slider category tabs ---------- */
+.lead-hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+}
+
+.lead-hero > .owl-carousel {
+    width: 100%;
+}
+
+.hero-tabs {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 40px;
+    padding-inline: 62px;
+}
+
+.hero-tabs-track {
+    display: flex;
+    gap: 34px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x proximity;
+    padding-bottom: 4px;
+}
+
+.hero-tabs-track::-webkit-scrollbar {
+    display: none;
+}
+
+.hero-tab {
+    box-sizing: border-box;
+    /* min-width:0 lets the five columns shrink to fit instead of
+       overflowing and clipping the last label off the right edge. */
+    flex: 1 1 0;
+    min-width: 0;
+    scroll-snap-align: start;
+    background: none;
+    border: 0;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-tab-bar {
+    display: block;
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgba(18, 47, 80, 0.18);
+    position: relative;
+    overflow: hidden;
+    transition: background-color 300ms ease;
+}
+
+.hero-tab-bar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #2390B3 0%, #37C6E8 100%);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 450ms ease;
+}
+
+.hero-tab-label {
+    font-family: var(--app-font-poppins);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 26px;
+    color: #6A6A8E;
+    transition: color 300ms ease;
+}
+
+.hero-tab:hover .hero-tab-bar,
+.hero-tab:focus-visible .hero-tab-bar {
+    background-color: rgba(18, 47, 80, 0.32);
+}
+
+.hero-tab:hover .hero-tab-label,
+.hero-tab:focus-visible .hero-tab-label {
+    color: #122F50;
+}
+
+.hero-tab.is-active .hero-tab-bar::after {
+    transform: scaleX(1);
+}
+
+.hero-tab.is-active .hero-tab-label {
+    color: #122F50;
+    font-weight: 700;
+}
+
+.lead-hero .img-container img {
+    border-radius: 28px;
+}
+
+@media (max-width: 1199px) {
+    .hero-tabs {
+        padding-inline: 32px;
+    }
+    .hero-tabs-track {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 991px) {
+    .lead-hero {
+        height: auto;
+        padding-bottom: 48px;
+    }
+    .hero-tabs {
+        padding-inline: 20px;
+        margin-top: 28px;
+    }
+    .hero-tab {
+        flex: 0 0 auto;
+        min-width: 150px;
+    }
+    .hero-tab-label {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}
+
+/* Landscape hero artwork needs a wider slot than the default portrait card. */
+.lead-hero .img-container.is-wide {
+    /* .app-custom-container caps at 1200px, so anything wider than this
+       starves the text column and forces the headline onto a third line. */
+    width: 520px;
+    flex: 0 0 auto;
+    align-self: center;
+}
+
+.lead-hero .img-container.is-wide img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 18px 48px rgba(18, 47, 80, 0.16);
+}
+
+@media (max-width: 1399px) {
+    .lead-hero .img-container.is-wide {
+        width: 440px;
+    }
+}
+
+/* The wide hero artwork narrows the text column, so the headline has to
+   scale down instead of wrapping onto a third line. */
+.lead-hero .banner-title-2 {
+    font-size: clamp(30px, 2.8vw, 48px);
+    line-height: 1.18;
+    max-width: 100%;
+}
+
+.lead-hero .banner-summary-text {
+    max-width: 430px;
+}
