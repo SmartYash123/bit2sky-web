@@ -8,11 +8,11 @@ $(document).ready(function() {
         loop: false,
         rewind: true,
         autoplay: true,
-        margin: 20,
+        margin: 0,
         nav: false,
         dots: false,
         autoplayTimeout: 5500,
-        autoplayHoverPause: true,
+        autoplayHoverPause: false,
         smartSpeed: 900,
         mouseDrag: false,
         touchDrag: true,
@@ -21,12 +21,28 @@ $(document).ready(function() {
     // Category strip under the hero: click a label to jump to that slide,
     // and keep the active label in sync while the carousel autoplays.
     var $tabs = $("#heroTabs .hero-tab");
+    var AUTOPLAY_MS = 5500;
+    var TRANSITION_MS = 900;
 
     if ($tabs.length) {
+        // Fill the bar over one autoplay interval, including the slide
+        // transition, so it lands full just as the next slide takes over.
+        $("#heroTabs").css("--hero-tab-duration", (AUTOPLAY_MS + TRANSITION_MS) + "ms");
+
         var setActive = function (index) {
             $tabs.removeClass("is-active").attr("aria-selected", "false");
             var $current = $tabs.filter('[data-slide="' + index + '"]');
             $current.addClass("is-active").attr("aria-selected", "true");
+
+            // The fill animation lives on .hero-tab-bar::after, so it can't be
+            // reset via inline style. Dropping the class, forcing a reflow and
+            // re-adding it replays the animation from zero.
+            var el = $current[0];
+            if (el) {
+                el.classList.remove("is-active");
+                void el.offsetWidth;
+                el.classList.add("is-active");
+            }
 
             // Keep the active label visible when the strip scrolls on small screens.
             var track = $current.closest(".hero-tabs-track")[0];

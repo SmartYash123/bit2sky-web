@@ -491,7 +491,57 @@ div.custom-nav>ul>li.sbmenu>a:after {
 }
 
 .lead-hero .btn-box .btn-main {
-    min-width: 214px;
+    /* Square-cornered outline pair: solid white primary, ghost secondary. */
+    min-width: 0;
+    padding: 13px 26px;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.lead-hero .btn-box .btn-main .btn-icon {
+    font-size: 13px;
+    margin: 0 !important;
+    transition: transform 220ms ease;
+}
+
+.lead-hero .btn-box .btn-main:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+/* The .circle ripple doesn't read on flat buttons. */
+.lead-hero .btn-box .btn-main .circle {
+    display: none;
+}
+
+.lead-hero .btn-box .btn-main.bg-btn2 {
+    background: #fff;
+    border: 1px solid #fff;
+    box-shadow: none;
+    color: #0A1B33;
+}
+
+.lead-hero .btn-box .btn-main.bg-btn2:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.lead-hero .btn-box .btn-main.bg-btn4 {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: none;
+    color: #fff;
+}
+
+.lead-hero .btn-box .btn-main.bg-btn4:hover {
+    background: #fff;
+    color: #0A1B33;
+    border-color: #fff;
 }
 
 .lead-hero .img-container {
@@ -673,25 +723,163 @@ background-image: linear-gradient(90deg, #673AB7 0%, #E91E63 36%, #E91E63 65%, #
 }
 
 
-/* ---------- Hero slider category tabs ---------- */
+/* ---------- Full-bleed hero slider ---------- */
 .lead-hero {
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
     position: relative;
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    background: #0A1B33;
     overflow: hidden;
+    /* The site header is fixed-top. Starting the hero below it keeps the
+       header solid white instead of going translucent over the artwork. */
+    margin-top: 96px;
 }
 
-.lead-hero > .owl-carousel {
+.lead-hero .hero-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* 56.25vw is the artwork's own 16:9 height, capped so the tabs always
+       stay above the fold. Don't use aspect-ratio here -- combined with a
+       max-height it shrinks the element's WIDTH and leaves a dark band
+       down the side instead of running full bleed. */
     width: 100%;
+    /* A minimum, not a fixed height -- a fixed one let tall copy overflow
+       the box and collide with the tab strip. */
+    /* Capped so the whole hero -- artwork, copy and tab strip -- stays
+       above the fold. A fixed height (not min-height) also keeps every
+       slide identical, so no dark gap opens under the shorter ones.
+       The window is wider than the artwork's 16:9, so `cover` trims a
+       little off the top and bottom; that is the deliberate trade for
+       never making the visitor scroll to reach the tabs. */
+    height: min(56.25vw, calc(100vh - 96px - 104px));
+    min-height: 470px;
+    background-size: cover;
+    background-position: center center;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
+/* Darkens the left side so the copy stays legible over any photo. */
+.lead-hero .hero-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        rgba(6, 20, 38, 0.92) 0%,
+        rgba(6, 20, 38, 0.80) 38%,
+        rgba(6, 20, 38, 0.35) 68%,
+        rgba(6, 20, 38, 0.15) 100%);
+}
+
+.lead-hero .hero-slide .app-custom-container {
+    position: relative;
+    z-index: 2;
+    padding-inline: 62px;
+    padding-block: 56px 56px;
+}
+
+.lead-hero .banner-text {
+    /* Wide enough that "AI & Technology Solutions" stays on one line. */
+    max-width: 720px;
+}
+
+.lead-hero .banner-title-1 {
+    font-family: var(--app-font-opensans);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #8FD9F5;
+    letter-spacing: 0.4px;
+}
+
+.lead-hero .banner-title-2 {
+    font-family: var(--app-font-poppins);
+    font-weight: 600;
+    font-size: clamp(32px, 3.4vw, 56px);
+    line-height: 1.16;
+    color: #fff;
+    max-width: 100%;
+}
+
+.lead-hero .banner-title-2 .app-color-primary {
+    color: #37C6E8;
+}
+
+.lead-hero .banner-summary-text {
+    font-family: var(--app-font-opensans);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 540px;
+}
+
+.lead-hero .btn-box .btn-main {
+    /* Square-cornered outline pair: solid white primary, ghost secondary. */
+    min-width: 0;
+    padding: 13px 26px;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.lead-hero .btn-box .btn-main .btn-icon {
+    font-size: 13px;
+    margin: 0 !important;
+    transition: transform 220ms ease;
+}
+
+.lead-hero .btn-box .btn-main:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+/* The .circle ripple doesn't read on flat buttons. */
+.lead-hero .btn-box .btn-main .circle {
+    display: none;
+}
+
+.lead-hero .btn-box .btn-main.bg-btn2 {
+    background: #fff;
+    border: 1px solid #fff;
+    box-shadow: none;
+    color: #0A1B33;
+}
+
+.lead-hero .btn-box .btn-main.bg-btn2:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.lead-hero .btn-box .btn-main.bg-btn4 {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: none;
+    color: #fff;
+}
+
+.lead-hero .btn-box .btn-main.bg-btn4:hover {
+    background: #fff;
+    color: #0A1B33;
+    border-color: #fff;
+}
+
+/* ---------- Category tabs, overlaid on the slide ---------- */
 .hero-tabs {
+    position: relative;
+    z-index: 3;
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    margin-top: 40px;
-    padding-inline: 62px;
+    padding: 26px 62px 28px;
+    background: #0B1F38;
 }
 
 .hero-tabs-track {
@@ -710,8 +898,6 @@ background-image: linear-gradient(90deg, #673AB7 0%, #E91E63 36%, #E91E63 65%, #
 
 .hero-tab {
     box-sizing: border-box;
-    /* min-width:0 lets the five columns shrink to fit instead of
-       overflowing and clipping the last label off the right edge. */
     flex: 1 1 0;
     min-width: 0;
     scroll-snap-align: start;
@@ -727,23 +913,44 @@ background-image: linear-gradient(90deg, #673AB7 0%, #E91E63 36%, #E91E63 65%, #
 
 .hero-tab-bar {
     display: block;
-    height: 3px;
-    border-radius: 3px;
-    background-color: rgba(18, 47, 80, 0.18);
+    height: 4px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.26);
     position: relative;
     overflow: hidden;
     transition: background-color 300ms ease;
+}
+
+/* The active tab's bar is a progress track: white rail, blue fill that
+   runs left-to-right over one autoplay interval. */
+.hero-tab.is-active .hero-tab-bar {
+    background-color: rgba(255, 255, 255, 0.92);
 }
 
 .hero-tab-bar::after {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 3px;
-    background: linear-gradient(90deg, #2390B3 0%, #37C6E8 100%);
+    border-radius: 4px;
+    background: linear-gradient(90deg, #2AA9DE 0%, #37C6E8 100%);
     transform: scaleX(0);
     transform-origin: left center;
-    transition: transform 450ms ease;
+}
+
+.hero-tab.is-active .hero-tab-bar::after {
+    animation: heroTabProgress var(--hero-tab-duration, 5500ms) linear forwards;
+}
+
+@keyframes heroTabProgress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-tab.is-active .hero-tab-bar::after {
+        animation: none;
+        transform: scaleX(1);
+    }
 }
 
 .hero-tab-label {
@@ -751,36 +958,32 @@ background-image: linear-gradient(90deg, #673AB7 0%, #E91E63 36%, #E91E63 65%, #
     font-weight: 500;
     font-size: 17px;
     line-height: 26px;
-    color: #6A6A8E;
+    color: rgba(255, 255, 255, 0.72);
     transition: color 300ms ease;
 }
 
-.hero-tab:hover .hero-tab-bar,
-.hero-tab:focus-visible .hero-tab-bar {
-    background-color: rgba(18, 47, 80, 0.32);
+.hero-tab:not(.is-active):hover .hero-tab-bar,
+.hero-tab:not(.is-active):focus-visible .hero-tab-bar {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .hero-tab:hover .hero-tab-label,
 .hero-tab:focus-visible .hero-tab-label {
-    color: #122F50;
-}
-
-.hero-tab.is-active .hero-tab-bar::after {
-    transform: scaleX(1);
+    color: #fff;
 }
 
 .hero-tab.is-active .hero-tab-label {
-    color: #122F50;
+    color: #fff;
     font-weight: 700;
 }
 
-.lead-hero .img-container img {
-    border-radius: 28px;
-}
-
 @media (max-width: 1199px) {
+    .lead-hero .hero-slide .app-custom-container,
     .hero-tabs {
         padding-inline: 32px;
+    }
+    .hero-tabs {
+        padding-block: 22px 24px;
     }
     .hero-tabs-track {
         gap: 24px;
@@ -788,13 +991,21 @@ background-image: linear-gradient(90deg, #673AB7 0%, #E91E63 36%, #E91E63 65%, #
 }
 
 @media (max-width: 991px) {
-    .lead-hero {
+    .lead-hero .hero-slide {
         height: auto;
-        padding-bottom: 48px;
+        min-height: 480px;
+    }
+    .lead-hero .hero-slide::before {
+        background: linear-gradient(180deg,
+            rgba(6, 20, 38, 0.86) 0%,
+            rgba(6, 20, 38, 0.92) 100%);
+    }
+    .lead-hero .hero-slide .app-custom-container {
+        padding-inline: 20px;
+        padding-block: 64px 64px;
     }
     .hero-tabs {
-        padding-inline: 20px;
-        margin-top: 28px;
+        padding: 20px 20px 22px;
     }
     .hero-tab {
         flex: 0 0 auto;
@@ -804,38 +1015,47 @@ background-image: linear-gradient(90deg, #673AB7 0%, #E91E63 36%, #E91E63 65%, #
         font-size: 15px;
         line-height: 22px;
     }
-}
-
-/* Landscape hero artwork needs a wider slot than the default portrait card. */
-.lead-hero .img-container.is-wide {
-    /* .app-custom-container caps at 1200px, so anything wider than this
-       starves the text column and forces the headline onto a third line. */
-    width: 520px;
-    flex: 0 0 auto;
-    align-self: center;
-}
-
-.lead-hero .img-container.is-wide img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 18px 48px rgba(18, 47, 80, 0.16);
-}
-
-@media (max-width: 1399px) {
-    .lead-hero .img-container.is-wide {
-        width: 440px;
+    .lead-hero .btn-box .btn-main {
+        min-width: 0;
+        flex: 0 1 auto;
+        padding: 11px 20px;
+        font-size: 14px;
     }
 }
 
-/* The wide hero artwork narrows the text column, so the headline has to
-   scale down instead of wrapping onto a third line. */
-.lead-hero .banner-title-2 {
-    font-size: clamp(30px, 2.8vw, 48px);
-    line-height: 1.18;
-    max-width: 100%;
+/* Header CTA matches the squared hero buttons. */
+.main-header .right-end-btn .btn-main.app-btn {
+    min-width: 0;
+    padding: 12px 24px;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    border-radius: 0;
+    background: #0A1B33;
+    border: 1px solid #0A1B33;
+    box-shadow: none;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 220ms ease, color 220ms ease;
 }
 
-.lead-hero .banner-summary-text {
-    max-width: 430px;
+.main-header .right-end-btn .btn-main.app-btn:hover {
+    background: transparent;
+    color: #0A1B33;
+}
+
+.main-header .right-end-btn .btn-main.app-btn .btn-icon {
+    font-size: 13px;
+    margin: 0 !important;
+    transition: transform 220ms ease;
+}
+
+.main-header .right-end-btn .btn-main.app-btn:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+.main-header .right-end-btn .btn-main.app-btn .circle {
+    display: none;
 }
