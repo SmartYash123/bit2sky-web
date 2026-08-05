@@ -52,23 +52,8 @@
         min-height: auto;
         height: auto;
      }
-    .lead-hero .app-custom-container{
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding-inline: 22px;
-    }
-    .lead-hero .app-custom-container .btn-box{
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    .lead-hero .app-custom-container .img-container{
-        width: 100%;
-        max-width: 330px;
-        margin-bottom: 20px;
-    }
+    /* The hero is now a full-bleed background slider with left-aligned copy
+       and no .img-container; centring and image sizing live in style_new.css. */
      /* ----------- END: hero section -----------------------*/
      /* ----------- BEGIN: hero section -----------------------*/
      .section-why-choose .container{
@@ -96,13 +81,7 @@
 }
 @media(max-width: 768px){
      /* ----------- BEGIN: hero section -----------------------*/
-     .lead-hero .btn-box{
-         gap: 0.5rem !important;
-     }
-     .lead-hero .banner-title-2 {
-         font-size: 44px;
-         line-height: 54px;
-     }
+     /* Hero type and button sizing are handled in style_new.css. */
      /* ----------- END: hero section -----------------------*/
      /* ----------- BEGIN: main nav -----------------------*/
      .main-header{
