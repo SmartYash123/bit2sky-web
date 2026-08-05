@@ -991,35 +991,160 @@ background-image: linear-gradient(90deg, #673AB7 0%, #E91E63 36%, #E91E63 65%, #
 }
 
 @media (max-width: 991px) {
+    /* ---- Tablet & phone hero ---- */
+    .lead-hero {
+        margin-top: 72px;
+    }
+
     .lead-hero .hero-slide {
         height: auto;
-        min-height: 480px;
+        min-height: 430px;
+        background-position: center center;
     }
+
+    /* A wide 2.35:1 photo inside a tall phone viewport would be cropped to
+       a sliver, so on small screens the artwork becomes an atmospheric
+       backdrop and the overlay carries the contrast. */
     .lead-hero .hero-slide::before {
         background: linear-gradient(180deg,
             rgba(6, 20, 38, 0.86) 0%,
-            rgba(6, 20, 38, 0.92) 100%);
+            rgba(6, 20, 38, 0.90) 55%,
+            rgba(6, 20, 38, 0.95) 100%);
     }
+
     .lead-hero .hero-slide .app-custom-container {
         padding-inline: 20px;
-        padding-block: 64px 64px;
+        padding-block: 56px 56px;
+        text-align: left;
     }
-    .hero-tabs {
-        padding: 20px 20px 22px;
+
+    .lead-hero .banner-text {
+        max-width: 100%;
+        text-align: left;
     }
-    .hero-tab {
-        flex: 0 0 auto;
-        min-width: 150px;
-    }
-    .hero-tab-label {
+
+    .lead-hero .banner-title-1 {
         font-size: 15px;
         line-height: 22px;
+        margin-bottom: 10px !important;
     }
+
+    .lead-hero .banner-title-2 {
+        font-size: clamp(26px, 6.4vw, 36px);
+        line-height: 1.22;
+        margin-bottom: 14px !important;
+    }
+
+    /* The desktop copy carries hard <br> breaks that would fragment the
+       headline into single words at phone width. */
+    .lead-hero .banner-title-2 br {
+        display: none;
+    }
+
+    .lead-hero .banner-summary-text {
+        font-size: 15px;
+        line-height: 25px;
+        max-width: 100%;
+        margin-bottom: 26px !important;
+    }
+
+    /* Bootstrap's utility classes on .btn-box out-specify a plain rule. */
+    .lead-hero .hero-slide .btn-box {
+        justify-content: flex-start !important;
+        gap: 12px !important;
+    }
+
     .lead-hero .btn-box .btn-main {
         min-width: 0;
         flex: 0 1 auto;
-        padding: 11px 20px;
+        padding: 11px 18px;
         font-size: 14px;
+        line-height: 18px;
+        gap: 9px;
+    }
+
+    .lead-hero .btn-box .btn-main .btn-icon {
+        font-size: 12px;
+    }
+
+    /* ---- Category strip ---- */
+    .hero-tabs {
+        padding: 18px 20px 20px;
+    }
+
+    .hero-tabs-track {
+        gap: 20px;
+    }
+
+    .hero-tab {
+        flex: 0 0 auto;
+        min-width: 148px;
+    }
+
+    .hero-tab-label {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .hero-tab-bar {
+        height: 3px;
+    }
+
+    /* ---- Header CTA ---- */
+    .main-header .right-end-btn .btn-main.app-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 575px) {
+    .lead-hero .hero-slide {
+        min-height: 400px;
+    }
+
+    .lead-hero .hero-slide .app-custom-container {
+        padding-inline: 18px;
+        padding-block: 44px 44px;
+    }
+
+    .lead-hero .banner-title-2 {
+        font-size: clamp(24px, 7.2vw, 30px);
+    }
+
+    .lead-hero .banner-summary-text {
+        font-size: 14.5px;
+        line-height: 24px;
+        margin-bottom: 22px !important;
+    }
+
+    .lead-hero .btn-box .btn-main {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .hero-tabs {
+        padding: 16px 18px 18px;
+    }
+
+    .hero-tab {
+        min-width: 136px;
+    }
+
+    .hero-tab-label {
+        font-size: 13px;
+        line-height: 19px;
+    }
+}
+
+@media (max-width: 380px) {
+    .lead-hero .banner-title-2 {
+        font-size: 23px;
+    }
+
+    .lead-hero .btn-box .btn-main {
+        padding: 10px 14px;
+        font-size: 12.5px;
+        gap: 7px;
     }
 }
 
@@ -1058,4 +1183,20 @@ background-image: linear-gradient(90deg, #673AB7 0%, #E91E63 36%, #E91E63 65%, #
 
 .main-header .right-end-btn .btn-main.app-btn .circle {
     display: none;
+}
+
+/* Owl sizes .owl-stage to the tallest slide; shorter ones then leave a dark
+   gap above the tab strip. Stretching the items makes every slide match. */
+#bannerSlider .owl-stage {
+    display: flex;
+    align-items: stretch;
+}
+
+#bannerSlider .owl-item {
+    display: flex;
+    flex-direction: column;
+}
+
+#bannerSlider .owl-item .hero-slide {
+    flex: 1 1 auto;
 }
